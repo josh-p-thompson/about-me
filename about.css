@@ -86,13 +86,6 @@ h1 {
     filter: drop-shadow(4px 4px 4px #36393C)
 }
 
-/* .project-card {
-    background-color: #EAEEE8;
-}
-
-.blog-card {
-    background-color: #F3F1EE
-} */
 
 .git-icon {
     text-align: right;
@@ -113,10 +106,9 @@ h1 {
     filter: drop-shadow(0 0 0.25rem #36393C); 
 }
 
-.keep-reading-btn .fa {
+.btn .fa {
     transition: .3s transform ease-in-out;
 }
 
-.keep-reading-btn .collapsed .fa {
-    transform: rotate(180deg);
-} */
+.btn:not(.collapsed)  span{display:none}
+.btn.collapsed b {display:none}
