@@ -2,14 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;; 
     font-weight: 300;
     color: #36393C;
-    /* padding-top: 40px;  */
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;; 
     font-weight: 900;
     color: #36393C;
-    /* text-transform: uppercase;  */
 }
 
 h1 {
@@ -31,7 +29,6 @@ h1 {
     width: 3rem;
     background-color: #fff;
     color: #36393C;    
-    /* color: #fff!important; */
     border-radius: 100%;
     text-align: center;
     font-size: 1.5rem;
@@ -62,11 +59,11 @@ h1 {
     top: 15%;
 }
 
-@media (min-width: 767.98px) and (max-width: 1000px){
+/* @media (min-width: 767.98px) and (max-width: 1000px){
     .name-title { 
         font-size: calc(1.375rem + 1.5vw);
     }
-}
+} */
 
 @media (max-width: 767.98px) {
     .left-block { 
