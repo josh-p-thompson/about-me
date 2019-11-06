@@ -11,13 +11,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 300%;
+    font-size: 290%;
 }
 
-.headshot {
-    width: 75px; 
-    height: 75px; 
+.name-title {
+    padding-left: 10px;
+    font-size: 4vw;
 }
+
+/* @media (min-width: 576px) and (max-width: 991.98px) {
+    .name-title {
+        /* font-size: 350%; */
+        font-size: 10vw;
+    }
+} */
 
 .icons {
     margin-bottom: 10px;
@@ -33,10 +40,7 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     line-height: 3rem;
-}
-
-.icons a:last-child {
-    margin-left: 5px;
+    padding-bottom: 3rem; 
 }
 
 .icons a:hover {
@@ -44,7 +48,7 @@ h1 {
     color: #fff;
 }
 
-.padding-0{
+.button-padding{
     padding-right:5px;
     padding-left:5px;
 }
@@ -59,17 +63,20 @@ h1 {
     top: 15%;
 }
 
-/* @media (min-width: 767.98px) and (max-width: 1000px){
+/* @media (max-width: 575.98px){
     .name-title { 
-        font-size: calc(1.375rem + 1.5vw);
+        font-size: calc(1rem + 1vw);
     }
 } */
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
     .left-block { 
         position: relative;
         top: 0;
         padding-bottom: 0px;
+    }
+    .name-title {
+        font-size: 8vw;
     }
 }
 
@@ -82,7 +89,6 @@ h1 {
     border-color: transparent;
     filter: drop-shadow(4px 4px 4px #36393C)
 }
-
 
 .git-icon {
     text-align: right;
