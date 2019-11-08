@@ -1,27 +1,57 @@
 from string import Template
- 
-# function to generate pages
-def generate_page(name, content, title, about_btn="", projects_btn="", blog_btn=""): 
-    template = Template(open('templates/template.html').read())
+
+# generate pages
+def generate_page(file_name, source, destination, title, about_btn="", projects_btn="", blog_btn=""): 
+    template = Template(import_content('templates/template.html'))
     full_page = template.safe_substitute(
         title=title,
-        right_block_content=content, 
+        right_block_content=import_content(source + file_name), 
         about_btn=about_btn, 
         projects_btn=projects_btn, 
-        blog_btn=blog_btn
+        blog_btn=blog_btn,
     )
-    open('docs/' + name + '.html', 'w+').write(full_page)
+    open(destination + file_name, 'w+').write(full_page)
+
+# import 
+def import_content(file_path): 
+    return open(file_path).read()
 
 def main(): 
-    # import content
-    index_content = open('content/index.html').read()
-    blog_content = open('content/blog.html').read()
-    projects_content = open('content/projects.html').read()
+    pages = [
+        {
+            'file_name': 'index.html',
+            'source_directory': 'content/',
+            'destination_directory': 'docs/',
+            'title': 'About Me', 
+            'about_btn': 'active', 
+        }, 
+        {
+            'file_name': 'projects.html',
+            'source_directory': 'content/',
+            'destination_directory': 'docs/',
+            'title': 'Projects', 
+            'projects_btn': 'active', 
+        }, 
+        {
+            'file_name': 'blog.html',
+            'source_directory': 'content/',
+            'destination_directory': 'docs/',
+            'title': 'Blog', 
+            'blog_btn': 'active',
+        }, 
+    ]
 
-    # create pages
-    generate_page(name='index', content=index_content, title='About Me', about_btn='active')
-    generate_page(name='blog', content=blog_content, title='Blog', blog_btn='active')
-    generate_page(name='projects', content=projects_content, title='Projects', projects_btn='active')
+    for page in pages:
+        print(f'generating page {page}\n') 
+        generate_page(
+            file_name=page['file_name'],
+            source=page['source_directory'], 
+            destination=page['destination_directory'], 
+            title=page['title'], 
+            about_btn=page.get('about_btn'), 
+            projects_btn=page.get('projects_btn'), 
+            blog_btn=page.get('blog_btn'),
+        )
 
 if __name__ == "__main__": 
     main()
