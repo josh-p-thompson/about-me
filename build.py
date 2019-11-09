@@ -1,7 +1,7 @@
 from string import Template
 
-# generate pages
 def generate_page(file_name, source, destination, title, about_btn="", projects_btn="", blog_btn=""): 
+    """ generate pages from content and template and write to destination directory"""
     template = Template(import_content('templates/template.html'))
     full_page = template.safe_substitute(
         title=title,
@@ -12,8 +12,8 @@ def generate_page(file_name, source, destination, title, about_btn="", projects_
     )
     open(destination + file_name, 'w+').write(full_page)
 
-# import 
 def import_content(file_path): 
+    """ import content files """
     return open(file_path).read()
 
 def main(): 

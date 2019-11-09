@@ -102,6 +102,12 @@ h1 {
     filter: drop-shadow(0 0 0.25rem #36393C); 
 }
 
+.blog-card img {
+    margin: auto;
+    padding: 10px;
+    /* filter: drop-shadow(0 0 0.25rem #36393C);  */
+}
+
 .btn .fa {
     transition: .3s transform ease-in-out;
 }
