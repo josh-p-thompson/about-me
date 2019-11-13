@@ -2,7 +2,7 @@ from string import Template
 
 def generate_page(file_name, source, destination, title, about_btn="", projects_btn="", blog_btn=""): 
     """ generate pages from content and template and write to destination directory """
-    template = Template(import_content('templates/template.html'))
+    template = Template(import_content('templates/base.html'))
     full_page = template.safe_substitute(
         title=title,
         right_block_content=import_content(source + file_name), 
@@ -22,7 +22,7 @@ def main():
             'file_name': 'index.html',
             'source_directory': 'content/',
             'destination_directory': 'docs/',
-            'title': 'About Me', 
+            'title': 'About', 
             'about_btn': 'active', 
         }, 
         {
